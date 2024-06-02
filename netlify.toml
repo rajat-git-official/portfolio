@@ -1,0 +1,11 @@
+'[build]  
+    command = "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn myportfolio.wsgi"  
+    publish = "staticfiles"
+
+
+    [build.environment]  PYTHON_VERSION = "3.9"
+    
+    [[redirects]]  
+        from = "/*"  
+        to = "/index.html"  
+        status = 200' 
